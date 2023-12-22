@@ -1,0 +1,16 @@
+<!-- templates/hapus_timbangan.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konfirmasi Hapus</title>
+</head>
+<body>
+    <h1>Konfirmasi Hapus</h1>
+    <p>Apakah Anda yakin ingin menghapus timbangan {{ data.nama }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Ya, Hapus</button>
+        <a href="{% url 'timbangan_list' %}">Tidak, Kembali</a>
+    </form>
+</body>
+</html>

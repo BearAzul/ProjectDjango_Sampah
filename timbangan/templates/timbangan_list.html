@@ -1,0 +1,37 @@
+<!-- templates/timbangan_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daftar Timbangan</title>
+</head>
+<body>
+    <h1>Daftar Timbangan</h1>
+    <a href="{% url 'tambah_timbangan' %}">Tambah Timbangan</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Alamat</th>
+                <th>Tipe Sampah</th>
+                <th>Harga Per Kilo</th>
+                <th>Jumlah Kilo</th>
+                <th>Harga Keseluruhan</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in timbangan_data %}
+                <tr>
+                    <td>{{ data.Nama }}</td>
+                    <td>{{ data.Alamat }}</td>
+                    <td>{{ data.TipeSampah }}</td>
+                    <td>{{ data.HargaPerKilo }}</td>
+                    <td>{{ data.JumlahKilo }}</td>
+                    <td>{{ data.HargaKeseluruhan }}</td>
+                   <td><a href="{% url 'edit_timbangan' data.id %}">Edit</a> | <a href="{% url 'hapus_timbangan' data.id %}">Hapus</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

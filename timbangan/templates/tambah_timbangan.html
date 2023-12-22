@@ -1,0 +1,32 @@
+<!-- templates/tambah_timbangan.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tambah Timbangan</title>
+</head>
+<body>
+    <h1>Tambah Timbangan</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="Nama">Nama:</label>
+        <input type="text" name="Nama" required><br>
+
+        <label for="Alamat">Alamat:</label>
+        <input type="text" name="Alamat" required><br>
+
+        <label for="TipeSampah">Tipe Sampah:</label>
+        <select name="TipeSampah" id="TipeSampah" required>
+          <option selected disabled>-- Pilih Tipe Sampah</option>
+          <option value="Tipe A">Tipe A</option>
+          <option value="Tipe B">Tipe B</option>
+          <option value="Tipe C">Tipe C</option>
+          <option value="Tipe D">Tipe D</option>
+        </select><br>
+
+        <label for="JumlahKilo">Jumlah Kilo:</label>
+        <input type="text" name="JumlahKilo" required><br>
+
+        <input type="submit" value="Simpan">
+    </form>
+</body>
+</html>
